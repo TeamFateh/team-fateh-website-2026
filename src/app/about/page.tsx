@@ -3,7 +3,7 @@ import RacingLineTimeline from "@/components/visuals/RacingLineTimeline";
 
 export const metadata: Metadata = {
     title: "About Us | Team Fateh",
-    description: "The story of Team Fateh, Thapar Institute's Formula Student team since 2008.",
+    description: "The story of Team Fateh, Thapar Institute's Formula Student team since 2007.",
 };
 
 export default function AboutPage() {

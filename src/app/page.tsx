@@ -32,7 +32,7 @@ export default function Home() {
               <h3 className="text-primary font-mono text-sm tracking-widest mb-4 uppercase">Chapter 01 // The Origin</h3>
               <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 leading-tight text-slate-200">
                 BORN IN <br />
-                <span className="italic text-muted-foreground">2008.</span>
+                <span className="italic text-muted-foreground">2007.</span>
               </h2>
             </FadeIn>
 

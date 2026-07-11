@@ -43,7 +43,7 @@ export default function Hero() {
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
                     <h2 className="text-primary font-mono text-sm md:text-base tracking-[0.5em] mb-4 uppercase">
-                        Est. 2008 // THAPAR INSTITUTE OF ENGINEERING AND TECHNOLOGY, PATIALA
+                        Est. 2007 // THAPAR INSTITUTE OF ENGINEERING AND TECHNOLOGY, PATIALA
                     </h2>
                     <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.9] tracking-tighter mb-8 text-white mix-blend-difference">
                         EAT.<br />
