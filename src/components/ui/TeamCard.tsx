@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Zap, Wind, ShieldAlert, FileKey, Cpu, Activity, Hexagon, ScanLine, Compass } from "lucide-react";
+import { Linkedin, Zap, Wind, ShieldAlert, FileKey, Cpu, Activity, Hexagon, ScanLine, Compass, Disc, Flame } from "lucide-react";
 
 interface TeamMember {
     name: string;
@@ -21,8 +21,9 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
     const [imgSrc, setImgSrc] = useState(member.image || '/images/Team/placeholder.png');
     const dept = department.toLowerCase();
 
-    // The 8 Departments
-    const isManagement = member.role.toLowerCase().includes("captain") || member.role.toLowerCase().includes("manager");
+    // The Departments & Roles
+    const isBrakes = member.role.toLowerCase().includes("brake") || member.name.toLowerCase().includes("niladri");
+    const isManagement = (member.role.toLowerCase().includes("captain") || member.role.toLowerCase().includes("manager")) && !isBrakes;
     const isStructures = dept.includes("structures");
     const isDynamics = dept.includes("dynamics");
     const isAero = dept.includes("aerodynamics");
@@ -42,18 +43,39 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
             className="group relative w-full aspect-[3/4] overflow-hidden bg-secondary border border-white/5 hover:border-primary/50 transition-colors flex flex-col items-center justify-center p-6"
         >
             {/* Round Image Container */}
-            <div className="relative w-3/4 aspect-square mb-4 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 border border-white/10 group-hover:border-primary/50 shadow-2xl z-20">
-                <Image
-                    src={imgSrc}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    onError={() => setImgSrc('/images/Team/placeholder.png')}
-                />
+            <div className="relative w-3/4 aspect-square mb-4 z-20">
+                <div className={`relative w-full h-full rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 border border-white/10 shadow-2xl ${
+                    isBrakes
+                        ? "group-hover:border-red-500 group-hover:shadow-[0_0_35px_rgba(239,68,68,0.9),inset_0_0_15px_rgba(249,115,22,0.5)]"
+                        : "group-hover:border-primary/50"
+                }`}>
+                    <Image
+                        src={imgSrc}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        onError={() => setImgSrc('/images/Team/placeholder.png')}
+                    />
 
-                {/* Overlay inside image */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
+                    {/* Overlay inside image */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
+                </div>
+
+                {/* Brakes Caliper & Ventilated Rotor Easter Egg */}
+                {isBrakes && (
+                    <>
+                        {/* Ventilated Drilled Disc Ring */}
+                        <div
+                            className="absolute -inset-2 rounded-full border-2 border-dashed border-red-500/0 group-hover:border-red-500/80 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none animate-spin"
+                            style={{ animationDuration: "10s" }}
+                        />
+                        {/* Red Brake Caliper */}
+                        <div className="absolute -top-1 -right-2 bg-gradient-to-r from-red-700 via-red-600 to-red-500 border border-red-400 text-white font-mono font-black text-[8px] px-2 py-0.5 rounded shadow-[0_0_15px_rgba(239,68,68,0.9)] tracking-wider uppercase rotate-12 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30">
+                            <Flame size={10} className="text-amber-300 animate-pulse" /> WILWOOD
+                        </div>
+                    </>
+                )}
             </div>
 
             {/* ---------------- EASTER EGG LAYERS (Full Card) ---------------- */}
@@ -227,6 +249,54 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                     </div>
                 )}
 
+                {/* 10. Brakes & Scrutineering: 4-Wheel Lockup & Hydraulic Pressure (Niladri Chakraborty) */}
+                {isBrakes && (
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none overflow-hidden bg-black/40">
+                        {/* Thermal Heat Radial Gradient */}
+                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(239,68,68,0.25)_0%,transparent_75%)]" />
+
+                        {/* Scrutineering 4-Wheel Lockup Stamp */}
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div className="border-4 border-red-600/90 text-red-500 px-4 py-2 font-display font-bold text-2xl -rotate-12 tracking-widest uppercase backdrop-blur-sm shadow-[0_0_30px_rgba(239,68,68,0.5)] text-center bg-black/40">
+                                4-WHEEL LOCKUP
+                                <span className="block text-[10px] font-mono tracking-widest text-emerald-400 mt-0.5 font-bold">
+                                    SCRUTINEERING // PASSED
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Top Right Hydraulic Telemetry */}
+                        <div className="absolute top-4 right-4 border border-red-500/50 bg-black/80 backdrop-blur-sm p-2 text-[10px] font-mono text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                            <div className="flex justify-between gap-3 mb-1">
+                                <span className="opacity-60">FRONT:</span>
+                                <span className="font-bold text-red-300">1,450 PSI</span>
+                            </div>
+                            <div className="flex justify-between gap-3 mb-1">
+                                <span className="opacity-60">REAR:</span>
+                                <span className="font-bold text-red-300">1,180 PSI</span>
+                            </div>
+                            <div className="flex justify-between gap-3 mb-1">
+                                <span className="opacity-60">BIAS:</span>
+                                <span className="text-amber-400 font-bold">54:46</span>
+                            </div>
+                            <div className="flex justify-between gap-3">
+                                <span className="opacity-60">ROTOR:</span>
+                                <span className="text-red-500 font-bold flex items-center gap-1">
+                                    <Flame size={10} className="animate-pulse" /> 680°C
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Bottom Left Decel Meter */}
+                        <div className="absolute bottom-24 left-4 text-red-500 font-mono text-xs font-bold tracking-widest flex items-center gap-2 bg-black/60 px-2 py-1 border-l-2 border-red-500 shadow-md">
+                            <Disc size={14} className="animate-spin text-red-400" style={{ animationDuration: "3s" }} /> DECEL: -1.6G
+                        </div>
+
+                        {/* Bottom Lockup Skid Indicator */}
+                        <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-red-600 via-amber-500 to-red-600 shadow-[0_0_12px_rgba(239,68,68,1)] animate-pulse" />
+                    </div>
+                )}
+
                 {/* Bottom Gradient for text readability */}
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background via-background/80 to-transparent" />
             </div>
@@ -235,7 +305,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
             {/* Content (Text Below Image) */}
             <div className="relative z-20 w-full mt-auto flex flex-col items-center">
                 <p className={`font-mono text-[10px] uppercase tracking-widest mb-2 text-center
-                    ${isElectronics || isData ? "text-green-400" : isAero ? "text-blue-400" : isAuto ? "text-fuchsia-400" : "text-primary"}
+                    ${isElectronics || isData ? "text-green-400" : isAero ? "text-blue-400" : isAuto ? "text-fuchsia-400" : isBrakes ? "text-red-400 font-semibold" : "text-primary"}
                 `}>
                     {member.role}
                 </p>
