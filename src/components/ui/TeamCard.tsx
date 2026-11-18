@@ -346,7 +346,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
 
                             {/* Stationary Red Caliper Clamped on Top Right */}
                             <div className="absolute top-1 right-1 w-6 h-7 bg-gradient-to-br from-red-600 to-red-700 border border-red-400 rounded-sm shadow-[0_0_12px_rgba(239,68,68,0.9)] flex items-center justify-center rotate-45 pointer-events-none">
-                                <span className="text-[6px] font-mono font-black text-white tracking-tighter">WILWOOD</span>
+                                <span className="text-[7px] font-mono font-black text-white tracking-wider">ISR</span>
                             </div>
                         </div>
 
