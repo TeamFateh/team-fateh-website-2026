@@ -65,15 +65,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
 
-                {/* Subtle corner badge on card for Brakes Lead */}
-                {isBrakes && (
-                    <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
-                        <span className="font-mono text-[8px] uppercase tracking-wider px-2 py-0.5 rounded bg-red-600/30 border border-red-500 text-red-300 backdrop-blur-md shadow-[0_0_10px_rgba(239,68,68,0.5)] flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
-                            BRAKES // 1,450 PSI
-                        </span>
-                    </div>
-                )}
+
             </div>
 
             {/* ---------------- EASTER EGG LAYERS (Full Card) ---------------- */}
@@ -358,21 +350,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                             </div>
                         </div>
 
-                        {/* Sleek Telemetry Pill beside the wheel */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -15, scale: 0.95 }}
-                            animate={{ opacity: 1, x: 0, scale: 1 }}
-                            exit={{ opacity: 0, x: 40, scale: 0.95 }}
-                            transition={{ delay: 0.1 }}
-                            className="bg-black/90 border border-red-500/60 backdrop-blur-md px-3.5 py-2 rounded-lg font-mono text-[11px] md:text-xs text-red-400 shadow-[0_0_25px_rgba(239,68,68,0.4)] flex items-center gap-2.5 whitespace-nowrap"
-                        >
-                            <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-                            <span className="font-bold text-white tracking-wider">4-WHEEL LOCKUP</span>
-                            <span className="text-white/30">|</span>
-                            <span className="text-emerald-400 font-bold">1,450 PSI</span>
-                            <span className="text-white/30">|</span>
-                            <span className="text-amber-400 font-bold">54:46 BIAS</span>
-                        </motion.div>
+
                     </motion.div>
                 )}
             </AnimatePresence>
