@@ -314,7 +314,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
             {/* Decorative Corner */}
             <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/0 group-hover:border-primary transition-all duration-300 z-30" />
 
-            {/* Custom Bottom-of-Window Micro Easter Eggs for Core Team Leaders */}
+            {/* Custom Bottom-of-Window Micro Easter Eggs for Core Team Leaders (Pure Pop Culture Graphics - Zero Text) */}
             <AnimatePresence>
                 {/* 1. Niladri Chakraborty: Rolling Race Wheel with ISR Brake Caliper */}
                 {isBrakes && isHovered && (
@@ -327,7 +327,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                             x: { type: "spring", damping: 18, stiffness: 95, mass: 0.85 },
                             opacity: { duration: 0.2 }
                         }}
-                        className="fixed bottom-6 left-0 z-[9999] pointer-events-none flex items-center gap-3.5 select-none"
+                        className="fixed bottom-6 left-0 z-[9999] pointer-events-none select-none"
                     >
                         <div className="relative w-16 h-16 md:w-20 md:h-20 drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)]">
                             <motion.div
@@ -359,7 +359,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                     </motion.div>
                 )}
 
-                {/* 2. Aditya Sood: Thor's Hammer (Mjölnir) Slamming Down with Lightning Arcs */}
+                {/* 2. Aditya Sood: Thor's Hammer (Mjölnir) with Lightning Arcs */}
                 {isSood && isHovered && (
                     <motion.div
                         key="sood-thors-hammer"
@@ -370,7 +370,7 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                             y: { type: "spring", stiffness: 190, damping: 14, mass: 0.9 },
                             opacity: { duration: 0.15 }
                         }}
-                        className="fixed bottom-6 left-8 z-[9999] pointer-events-none flex items-center gap-3 select-none"
+                        className="fixed bottom-6 left-8 z-[9999] pointer-events-none select-none"
                     >
                         <div className="relative w-16 h-20 md:w-20 md:h-24 drop-shadow-[0_0_25px_rgba(56,189,248,0.85)]">
                             <svg viewBox="0 0 100 120" className="w-full h-full">
@@ -390,157 +390,178 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                                 <path d="M 88 16 L 78 28 L 84 36 L 74 42" stroke="#38bdf8" strokeWidth="2" fill="none" className="animate-pulse" />
                             </svg>
                         </div>
-                        <div className="bg-black/90 border border-sky-400/60 backdrop-blur-md px-3 py-1.5 rounded-lg font-mono text-[11px] md:text-xs text-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.4)] flex items-center gap-2 whitespace-nowrap">
-                            <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
-                            <span className="font-bold text-white tracking-wider">MJÖLNIR // 400V</span>
-                            <span className="text-white/30">|</span>
-                            <span className="text-amber-300 font-bold">GOD OF THUNDER</span>
-                        </div>
                     </motion.div>
                 )}
 
-                {/* 3. Anirudh Tanikella: Precision Ratcheting Torque Wrench (Structures Lead) */}
+                {/* 3. Anirudh Tanikella: Captain America's Vibranium Shield */}
                 {isAnirudh && isHovered && (
                     <motion.div
-                        key="anirudh-torque-wrench"
-                        initial={{ x: "-180px", opacity: 0, rotate: -15 }}
-                        animate={{ x: 36, opacity: 1, rotate: 0 }}
-                        exit={{ x: "105vw", opacity: 0 }}
+                        key="anirudh-cap-shield"
+                        initial={{ x: "-180px", opacity: 0 }}
+                        animate={{ x: 36, opacity: 1 }}
+                        exit={{ x: "105vw", opacity: 0.9 }}
                         transition={{
-                            x: { type: "spring", damping: 18, stiffness: 95 },
+                            x: { type: "spring", damping: 18, stiffness: 95, mass: 0.85 },
                             opacity: { duration: 0.2 }
                         }}
-                        className="fixed bottom-6 left-0 z-[9999] pointer-events-none flex items-center gap-3 select-none"
+                        className="fixed bottom-6 left-0 z-[9999] pointer-events-none select-none"
                     >
-                        <div className="relative w-24 h-16 md:w-28 md:h-18 drop-shadow-[0_8px_20px_rgba(0,0,0,0.85)]">
-                            <svg viewBox="0 0 120 70" className="w-full h-full">
-                                <rect x="30" y="30" width="80" height="10" rx="3" fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" />
-                                <rect x="75" y="27" width="38" height="16" rx="2" fill="#1e293b" stroke="#475569" strokeWidth="1" />
-                                <line x1="82" y1="27" x2="82" y2="43" stroke="#64748b" strokeWidth="1" strokeDasharray="2 2" />
-                                <line x1="90" y1="27" x2="90" y2="43" stroke="#64748b" strokeWidth="1" strokeDasharray="2 2" />
-                                <line x1="98" y1="27" x2="98" y2="43" stroke="#64748b" strokeWidth="1" strokeDasharray="2 2" />
-                                <circle cx="25" cy="35" r="14" fill="#94a3b8" stroke="#475569" strokeWidth="2" />
-                                <circle cx="25" cy="35" r="8" fill="#334155" />
-                                <polygon points="25,29 30,32 30,38 25,41 20,38 20,32" fill="#f59e0b" />
-                                <rect x="42" y="26" width="28" height="18" rx="2" fill="#09090b" stroke="#f59e0b" strokeWidth="1" />
-                                <text x="56" y="38" textAnchor="middle" fill="#22c55e" fontSize="7" fontWeight="bold" fontFamily="monospace">65.0</text>
-                                <text x="56" y="43" textAnchor="middle" fill="#e2e8f0" fontSize="3.5" fontFamily="monospace">N·m</text>
-                            </svg>
-                        </div>
-                        <div className="bg-black/90 border border-amber-500/60 backdrop-blur-md px-3 py-1.5 rounded-lg font-mono text-[11px] md:text-xs text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.35)] flex items-center gap-2 whitespace-nowrap">
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                            <span className="font-bold text-white tracking-wider">CHASSIS TORQUE</span>
-                            <span className="text-white/30">|</span>
-                            <span className="text-emerald-400 font-bold">65 N·m // SPEC OK</span>
+                        <div className="relative w-16 h-16 md:w-20 md:h-20 drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)]">
+                            <motion.div
+                                initial={{ rotate: -540 }}
+                                animate={{ rotate: 0 }}
+                                exit={{ rotate: 1440 }}
+                                transition={{ rotate: { type: "spring", damping: 18, stiffness: 95, mass: 0.85 } }}
+                                className="w-full h-full"
+                            >
+                                <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_0_15px_rgba(239,68,68,0.7)]">
+                                    <circle cx="50" cy="50" r="48" fill="#dc2626" stroke="#991b1b" strokeWidth="1.5" />
+                                    <circle cx="50" cy="50" r="38" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1" />
+                                    <circle cx="50" cy="50" r="28" fill="#dc2626" stroke="#991b1b" strokeWidth="1" />
+                                    <circle cx="50" cy="50" r="18" fill="#1d4ed8" stroke="#1e40af" strokeWidth="1" />
+                                    <polygon points="50,34 54,44 65,44 56,51 60,61 50,54 40,61 44,51 35,44 46,44" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.5" />
+                                </svg>
+                            </motion.div>
                         </div>
                     </motion.div>
                 )}
 
-                {/* 4. Mannat Goyal: Pit Wall Radio (Team Manager) */}
+                {/* 4. Mannat Goyal: World's Best Boss Mug (The Office) */}
                 {isMannat && isHovered && (
                     <motion.div
-                        key="mannat-pit-radio"
-                        initial={{ y: "100px", opacity: 0 }}
+                        key="mannat-best-boss-mug"
+                        initial={{ y: "120px", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: "120px", opacity: 0 }}
+                        exit={{ y: "140px", opacity: 0 }}
                         transition={{
                             y: { type: "spring", damping: 18, stiffness: 100 },
                             opacity: { duration: 0.2 }
                         }}
-                        className="fixed bottom-6 left-8 z-[9999] pointer-events-none flex items-center gap-3 select-none"
+                        className="fixed bottom-6 left-8 z-[9999] pointer-events-none select-none"
                     >
-                        <div className="relative w-14 h-22 md:w-16 md:h-24 drop-shadow-[0_8px_20px_rgba(0,0,0,0.85)]">
-                            <svg viewBox="0 0 70 110" className="w-full h-full">
-                                <line x1="20" y1="35" x2="20" y2="8" stroke="#334155" strokeWidth="3" strokeLinecap="round" />
-                                <circle cx="20" cy="8" r="3" fill="#ef4444" className="animate-ping" />
-                                <rect x="36" y="22" width="10" height="8" rx="1" fill="#475569" />
-                                <rect x="10" y="30" width="50" height="75" rx="6" fill="#18181b" stroke="#3f3f46" strokeWidth="2" />
-                                <rect x="18" y="38" width="34" height="20" rx="2" fill="#064e3b" stroke="#10b981" strokeWidth="1" />
-                                <text x="35" y="47" textAnchor="middle" fill="#34d399" fontSize="5.5" fontWeight="bold" fontFamily="monospace">CH 01</text>
-                                <text x="35" y="54" textAnchor="middle" fill="#6ee7b7" fontSize="4" fontFamily="monospace">TX LIVE</text>
-                                <line x1="22" y1="68" x2="48" y2="68" stroke="#3f3f46" strokeWidth="2" strokeLinecap="round" />
-                                <line x1="22" y1="74" x2="48" y2="74" stroke="#3f3f46" strokeWidth="2" strokeLinecap="round" />
-                                <line x1="22" y1="80" x2="48" y2="80" stroke="#3f3f46" strokeWidth="2" strokeLinecap="round" />
-                                <rect x="6" y="48" width="4" height="18" rx="1" fill="#ef4444" />
+                        <div className="relative w-16 h-20 md:w-20 md:h-24 drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)]">
+                            {/* Coffee Steam Wisps */}
+                            <div className="absolute -top-3 left-4 flex gap-1.5 opacity-80">
+                                <motion.div
+                                    animate={{ y: [-2, -8, -2], opacity: [0.3, 0.9, 0.3] }}
+                                    transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                                    className="w-1 h-5 rounded-full bg-gradient-to-t from-white/60 to-transparent blur-[1px]"
+                                />
+                                <motion.div
+                                    animate={{ y: [-4, -10, -4], opacity: [0.4, 1, 0.4] }}
+                                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut", delay: 0.4 }}
+                                    className="w-1 h-6 rounded-full bg-gradient-to-t from-white/70 to-transparent blur-[1px]"
+                                />
+                                <motion.div
+                                    animate={{ y: [-2, -7, -2], opacity: [0.3, 0.8, 0.3] }}
+                                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.8 }}
+                                    className="w-1 h-4 rounded-full bg-gradient-to-t from-white/50 to-transparent blur-[1px]"
+                                />
+                            </div>
+
+                            <svg viewBox="0 0 100 110" className="w-full h-full">
+                                <path d="M 68 40 Q 95 40 95 65 Q 95 90 68 90" fill="none" stroke="#f1f5f9" strokeWidth="8" strokeLinecap="round" />
+                                <path d="M 68 40 Q 95 40 95 65 Q 95 90 68 90" fill="none" stroke="#cbd5e1" strokeWidth="2" strokeLinecap="round" />
+                                <rect x="15" y="28" width="60" height="72" rx="6" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="2" />
+                                <ellipse cx="45" cy="28" rx="30" ry="6" fill="#451a03" stroke="#cbd5e1" strokeWidth="2" />
+                                <text x="45" y="52" textAnchor="middle" fill="#0f172a" fontSize="7" fontWeight="900" fontFamily="sans-serif" letterSpacing="0.5">WORLD&apos;S</text>
+                                <text x="45" y="65" textAnchor="middle" fill="#0f172a" fontSize="8.5" fontWeight="900" fontFamily="sans-serif" letterSpacing="0.5">BEST</text>
+                                <text x="45" y="80" textAnchor="middle" fill="#0f172a" fontSize="8.5" fontWeight="900" fontFamily="sans-serif" letterSpacing="0.5">BOSS</text>
+                                <line x1="28" y1="87" x2="62" y2="87" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" />
                             </svg>
-                        </div>
-                        <div className="bg-black/90 border border-emerald-500/60 backdrop-blur-md px-3.5 py-2 rounded-lg font-mono text-[11px] md:text-xs text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.35)] flex items-center gap-2.5 whitespace-nowrap">
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                            <span className="font-bold text-white tracking-wider">PIT COMMS</span>
-                            <span className="text-white/30">|</span>
-                            <span className="text-emerald-300 font-bold">&quot;BOX THIS LAP // P1&quot;</span>
                         </div>
                     </motion.div>
                 )}
 
-                {/* 5. Dravin Chawla: TIG Welding Torch with Arc Sparks (Manufacturing Lead) */}
+                {/* 5. Dravin Chawla: Star Wars Blue Lightsaber */}
                 {isDravin && isHovered && (
                     <motion.div
-                        key="dravin-tig-torch"
-                        initial={{ x: "-180px", opacity: 0, rotate: 12 }}
-                        animate={{ x: 36, opacity: 1, rotate: 0 }}
-                        exit={{ x: "105vw", opacity: 0 }}
+                        key="dravin-lightsaber"
+                        initial={{ x: "-220px", opacity: 0 }}
+                        animate={{ x: 36, opacity: 1 }}
+                        exit={{ x: "-240px", opacity: 0 }}
                         transition={{
                             x: { type: "spring", damping: 18, stiffness: 95 },
                             opacity: { duration: 0.2 }
                         }}
-                        className="fixed bottom-6 left-0 z-[9999] pointer-events-none flex items-center gap-3 select-none"
+                        className="fixed bottom-8 left-0 z-[9999] pointer-events-none select-none flex items-center"
                     >
-                        <div className="relative w-22 h-16 md:w-26 md:h-18 drop-shadow-[0_8px_20px_rgba(0,0,0,0.85)]">
-                            <svg viewBox="0 0 110 70" className="w-full h-full">
-                                <rect x="40" y="32" width="65" height="12" rx="3" fill="#18181b" stroke="#3b82f6" strokeWidth="1.5" />
-                                <line x1="55" y1="32" x2="55" y2="44" stroke="#3f3f46" strokeWidth="1.5" />
-                                <line x1="70" y1="32" x2="70" y2="44" stroke="#3f3f46" strokeWidth="1.5" />
-                                <polygon points="40,32 30,32 20,40 24,46 38,40 40,38" fill="#64748b" stroke="#94a3b8" strokeWidth="1" />
-                                <polygon points="20,40 10,48 14,54 24,46" fill="#f43f5e" stroke="#fb7185" strokeWidth="1" />
-                                <line x1="12" y1="51" x2="4" y2="58" stroke="#cbd5e1" strokeWidth="2.5" strokeLinecap="round" />
-                                <circle cx="4" cy="58" r="4" fill="#60a5fa" className="animate-ping" />
-                                <circle cx="4" cy="58" r="2" fill="#ffffff" />
-                                <line x1="4" y1="58" x2="-2" y2="52" stroke="#93c5fd" strokeWidth="1" strokeDasharray="2 2" className="animate-pulse" />
-                                <line x1="4" y1="58" x2="1" y2="66" stroke="#93c5fd" strokeWidth="1" strokeDasharray="2 2" className="animate-pulse" />
+                        <div className="relative flex items-center drop-shadow-[0_0_25px_rgba(56,189,248,0.95)]">
+                            <svg viewBox="0 0 70 30" className="w-18 h-8 md:w-22 md:h-10 z-20">
+                                <rect x="10" y="8" width="50" height="14" rx="2" fill="#475569" stroke="#94a3b8" strokeWidth="1.5" />
+                                <rect x="15" y="7" width="5" height="16" fill="#0f172a" />
+                                <rect x="23" y="7" width="5" height="16" fill="#0f172a" />
+                                <rect x="31" y="7" width="5" height="16" fill="#0f172a" />
+                                <rect x="39" y="7" width="5" height="16" fill="#0f172a" />
+                                <rect x="47" y="5" width="6" height="4" rx="1" fill="#ef4444" />
+                                <polygon points="60,6 68,9 68,21 60,24" fill="#334155" stroke="#cbd5e1" strokeWidth="1" />
+                                <rect x="6" y="7" width="4" height="16" rx="1" fill="#64748b" />
                             </svg>
-                        </div>
-                        <div className="bg-black/90 border border-blue-500/60 backdrop-blur-md px-3 py-1.5 rounded-lg font-mono text-[11px] md:text-xs text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.35)] flex items-center gap-2 whitespace-nowrap">
-                            <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
-                            <span className="font-bold text-white tracking-wider">TIG WELDING</span>
-                            <span className="text-white/30">|</span>
-                            <span className="text-cyan-300 font-bold">4130 CHROMOLY // ±0.005mm</span>
+                            <motion.div
+                                initial={{ scaleX: 0, opacity: 0 }}
+                                animate={{ scaleX: 1, opacity: 1 }}
+                                exit={{ scaleX: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                style={{ transformOrigin: "left" }}
+                                className="relative -ml-2 h-4 w-44 md:w-60 rounded-r-full bg-white shadow-[0_0_20px_#38bdf8,0_0_35px_#0284c7,0_0_60px_#0284c7] flex items-center"
+                            >
+                                <div className="w-full h-1.5 bg-sky-200 rounded-r-full" />
+                            </motion.div>
                         </div>
                     </motion.div>
                 )}
 
-                {/* 6. Arnav Gautam: Carbon Rear Wing with Opening DRS (Aerodynamics Lead) */}
+                {/* 6. Arnav Gautam: Harry Potter Golden Snitch with Fluttering Wings */}
                 {isArnav && isHovered && (
                     <motion.div
-                        key="arnav-aero-drs"
-                        initial={{ x: "-180px", opacity: 0 }}
-                        animate={{ x: 36, opacity: 1 }}
-                        exit={{ x: "105vw", opacity: 0 }}
+                        key="arnav-golden-snitch"
+                        initial={{ x: "-180px", y: 20, opacity: 0 }}
+                        animate={{ x: 48, y: 0, opacity: 1 }}
+                        exit={{ x: "105vw", y: -40, opacity: 0 }}
                         transition={{
-                            x: { type: "spring", damping: 18, stiffness: 95 },
+                            x: { type: "spring", damping: 16, stiffness: 90 },
                             opacity: { duration: 0.2 }
                         }}
-                        className="fixed bottom-6 left-0 z-[9999] pointer-events-none flex items-center gap-3 select-none"
+                        className="fixed bottom-8 left-0 z-[9999] pointer-events-none select-none"
                     >
-                        <div className="relative w-22 h-16 md:w-26 md:h-18 drop-shadow-[0_8px_20px_rgba(0,0,0,0.85)]">
-                            <svg viewBox="0 0 110 70" className="w-full h-full">
-                                <polygon points="15,10 95,10 85,55 20,55" fill="#18181b" stroke="#06b6d4" strokeWidth="1.5" />
-                                <line x1="20" y1="20" x2="90" y2="20" stroke="#27272a" strokeWidth="1" />
-                                <line x1="20" y1="30" x2="87" y2="30" stroke="#27272a" strokeWidth="1" />
-                                <path d="M 28 35 Q 55 28 80 34 Q 55 38 28 35 Z" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
-                                <path d="M 32 20 Q 55 12 76 18 Q 55 24 32 20 Z" fill="#0284c7" stroke="#38bdf8" strokeWidth="1.5" transform="rotate(-18 55 18)" />
-                                <line x1="55" y1="18" x2="55" y2="34" stroke="#f43f5e" strokeWidth="2" />
-                                <circle cx="55" cy="26" r="2.5" fill="#f43f5e" />
-                                <path d="M 5 22 Q 30 16 95 16" stroke="#06b6d4" strokeWidth="1.5" fill="none" strokeDasharray="4 4" className="animate-pulse" />
-                                <path d="M 5 36 Q 35 30 98 32" stroke="#06b6d4" strokeWidth="1.5" fill="none" strokeDasharray="4 4" className="animate-pulse" />
+                        <motion.div
+                            animate={{ y: [-4, 4, -4] }}
+                            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+                            className="relative w-20 h-16 md:w-24 md:h-18 drop-shadow-[0_0_20px_rgba(234,179,8,0.85)]"
+                        >
+                            <svg viewBox="0 0 120 80" className="w-full h-full">
+                                <motion.path
+                                    d="M 50 40 Q 25 15 5 28 Q 28 35 50 40 Z"
+                                    fill="#f8fafc"
+                                    stroke="#cbd5e1"
+                                    strokeWidth="1"
+                                    opacity="0.85"
+                                    animate={{ rotate: [-20, 25, -20] }}
+                                    transition={{ repeat: Infinity, duration: 0.15, ease: "easeInOut" }}
+                                    style={{ transformOrigin: "50px 40px" }}
+                                />
+                                <motion.path
+                                    d="M 70 40 Q 95 15 115 28 Q 92 35 70 40 Z"
+                                    fill="#f8fafc"
+                                    stroke="#cbd5e1"
+                                    strokeWidth="1"
+                                    opacity="0.85"
+                                    animate={{ rotate: [20, -25, 20] }}
+                                    transition={{ repeat: Infinity, duration: 0.15, ease: "easeInOut" }}
+                                    style={{ transformOrigin: "70px 40px" }}
+                                />
+                                <circle cx="60" cy="40" r="14" fill="url(#snitchGold)" stroke="#ca8a04" strokeWidth="1.5" />
+                                <circle cx="60" cy="40" r="10" fill="none" stroke="#fef08a" strokeWidth="1" strokeDasharray="3 3" />
+                                <circle cx="56" cy="36" r="3" fill="#ffffff" opacity="0.6" />
+                                <defs>
+                                    <radialGradient id="snitchGold" cx="40%" cy="40%" r="60%">
+                                        <stop offset="0%" stopColor="#fef08a" />
+                                        <stop offset="40%" stopColor="#eab308" />
+                                        <stop offset="100%" stopColor="#a16207" />
+                                    </radialGradient>
+                                </defs>
                             </svg>
-                        </div>
-                        <div className="bg-black/90 border border-cyan-500/60 backdrop-blur-md px-3 py-1.5 rounded-lg font-mono text-[11px] md:text-xs text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.35)] flex items-center gap-2 whitespace-nowrap">
-                            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-                            <span className="font-bold text-white tracking-wider">DRS OPEN</span>
-                            <span className="text-white/30">|</span>
-                            <span className="text-cyan-300 font-bold">DOWNFORCE: 850N</span>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
