@@ -393,35 +393,79 @@ export default function TeamCard({ member, department = "" }: TeamCardProps) {
                     </motion.div>
                 )}
 
-                {/* 3. Anirudh Tanikella: Captain America's Vibranium Shield */}
+                {/* 3. Anirudh Tanikella: Open Engineering Notebook with Doodles & Pencil */}
                 {isAnirudh && isHovered && (
                     <motion.div
-                        key="anirudh-cap-shield"
-                        initial={{ x: "-180px", opacity: 0 }}
-                        animate={{ x: 36, opacity: 1 }}
-                        exit={{ x: "105vw", opacity: 0.9 }}
+                        key="anirudh-notebook"
+                        initial={{ x: "-180px", opacity: 0, rotate: -12 }}
+                        animate={{ x: 36, opacity: 1, rotate: 0 }}
+                        exit={{ x: "105vw", opacity: 0.9, rotate: 15 }}
                         transition={{
                             x: { type: "spring", damping: 18, stiffness: 95, mass: 0.85 },
                             opacity: { duration: 0.2 }
                         }}
                         className="fixed bottom-6 left-0 z-[9999] pointer-events-none select-none"
                     >
-                        <div className="relative w-16 h-16 md:w-20 md:h-20 drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)]">
-                            <motion.div
-                                initial={{ rotate: -540 }}
-                                animate={{ rotate: 0 }}
-                                exit={{ rotate: 1440 }}
-                                transition={{ rotate: { type: "spring", damping: 18, stiffness: 95, mass: 0.85 } }}
-                                className="w-full h-full"
-                            >
-                                <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_0_15px_rgba(239,68,68,0.7)]">
-                                    <circle cx="50" cy="50" r="48" fill="#dc2626" stroke="#991b1b" strokeWidth="1.5" />
-                                    <circle cx="50" cy="50" r="38" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1" />
-                                    <circle cx="50" cy="50" r="28" fill="#dc2626" stroke="#991b1b" strokeWidth="1" />
-                                    <circle cx="50" cy="50" r="18" fill="#1d4ed8" stroke="#1e40af" strokeWidth="1" />
-                                    <polygon points="50,34 54,44 65,44 56,51 60,61 50,54 40,61 44,51 35,44 46,44" fill="#f8fafc" stroke="#cbd5e1" strokeWidth="0.5" />
-                                </svg>
-                            </motion.div>
+                        <div className="relative w-20 h-16 md:w-26 md:h-20 drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)]">
+                            <svg viewBox="0 0 120 90" className="w-full h-full drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+                                {/* Notebook Cover / Backing */}
+                                <rect x="8" y="10" width="104" height="72" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="1.5" />
+
+                                {/* Left Page */}
+                                <polygon points="12,12 58,12 58,78 12,78" fill="#fefce8" stroke="#cbd5e1" strokeWidth="1" />
+                                {/* Right Page */}
+                                <polygon points="62,12 108,12 108,78 62,78" fill="#fffbeb" stroke="#cbd5e1" strokeWidth="1" />
+
+                                {/* Spine Shading & Spiral Rings */}
+                                <rect x="58" y="12" width="4" height="66" fill="#e2e8f0" />
+                                <ellipse cx="60" cy="18" rx="3" ry="1.5" fill="#64748b" />
+                                <ellipse cx="60" cy="28" rx="3" ry="1.5" fill="#64748b" />
+                                <ellipse cx="60" cy="38" rx="3" ry="1.5" fill="#64748b" />
+                                <ellipse cx="60" cy="48" rx="3" ry="1.5" fill="#64748b" />
+                                <ellipse cx="60" cy="58" rx="3" ry="1.5" fill="#64748b" />
+                                <ellipse cx="60" cy="68" rx="3" ry="1.5" fill="#64748b" />
+
+                                {/* Ruled Lines on Left Page */}
+                                <line x1="16" y1="22" x2="54" y2="22" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="16" y1="30" x2="54" y2="30" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="16" y1="38" x2="54" y2="38" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="16" y1="46" x2="54" y2="46" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="16" y1="54" x2="54" y2="54" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="16" y1="62" x2="54" y2="62" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="16" y1="70" x2="54" y2="70" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+
+                                {/* Hand-Drawn Race Car Chassis Doodle on Left Page */}
+                                <path d="M 18 42 L 32 40 L 42 46 L 50 46 L 46 52 L 22 52 Z" fill="none" stroke="#2563eb" strokeWidth="1.2" strokeLinecap="round" />
+                                <circle cx="24" cy="52" r="3.5" fill="#1e293b" />
+                                <circle cx="44" cy="52" r="3.5" fill="#1e293b" />
+
+                                {/* Ruled Lines on Right Page */}
+                                <line x1="66" y1="22" x2="104" y2="22" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="66" y1="30" x2="104" y2="30" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="66" y1="38" x2="104" y2="38" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="66" y1="46" x2="104" y2="46" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="66" y1="54" x2="104" y2="54" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="66" y1="62" x2="104" y2="62" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+                                <line x1="66" y1="70" x2="104" y2="70" stroke="#93c5fd" strokeWidth="0.75" opacity="0.6" />
+
+                                {/* Checkmarks on Right Page */}
+                                <path d="M 68 29 L 71 31 L 76 27" fill="none" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round" />
+                                <path d="M 68 37 L 71 39 L 76 35" fill="none" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round" />
+                                <path d="M 68 45 L 71 47 L 76 43" fill="none" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round" />
+
+                                <line x1="80" y1="29" x2="100" y2="29" stroke="#475569" strokeWidth="1" strokeLinecap="round" />
+                                <line x1="80" y1="37" x2="98" y2="37" stroke="#475569" strokeWidth="1" strokeLinecap="round" />
+                                <line x1="80" y1="45" x2="95" y2="45" stroke="#475569" strokeWidth="1" strokeLinecap="round" />
+
+                                {/* Yellow HB Pencil */}
+                                <g transform="rotate(-25 80 65)">
+                                    <rect x="70" y="60" width="35" height="5" rx="1" fill="#eab308" stroke="#ca8a04" strokeWidth="0.5" />
+                                    <rect x="66" y="60" width="4" height="5" rx="1" fill="#f472b6" />
+                                    <rect x="69" y="60" width="2" height="5" fill="#94a3b8" />
+                                    <polygon points="105,60 112,62.5 105,65" fill="#fed7aa" />
+                                    <polygon points="110,61.8 112,62.5 110,63.2" fill="#0f172a" />
+                                </g>
+                            </svg>
                         </div>
                     </motion.div>
                 )}
